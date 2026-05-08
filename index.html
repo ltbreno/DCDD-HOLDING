@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Holdings & Sucessão | Planejamento patrimonial e sucessório</title>
+<meta name="description" content="Estruturamos holdings para proteger patrimônio, reduzir tributação e organizar a sucessão familiar. Mais de 15 anos de experiência em direito empresarial."/>
+<meta name="keywords" content="holding, planejamento patrimonial, planejamento sucessório, blindagem patrimonial, holding familiar, sucessão empresarial, reforma tributária"/>
+<meta property="og:title" content="Holdings & Sucessão | Proteja seu patrimônio"/>
+<meta property="og:description" content="Estrutura jurídica para proteger bens, reduzir tributação e garantir sucessão sem inventário."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/colors_and_type.css"/>
+
+<style>
+  :root {
+    --bg: #0E0D0B;
+    --bg-elev: #161410;
+    --paper: #F4EFE6;          /* warm off-white — institutional */
+    --paper-elev: #ECE5D5;
+    --ink: #14110D;
+    --ink-soft: #4A4438;
+    --ink-mute: #837C6E;
+    --line-dark: rgba(244,239,230,0.10);
+    --line-dark-strong: rgba(244,239,230,0.20);
+    --line-light: rgba(20,17,13,0.10);
+    --line-light-strong: rgba(20,17,13,0.22);
+    --gold: #B8945A;            /* champagne gold — default accent */
+    --gold-deep: #8C6A3F;
+    --fg-on-dark: #F4EFE6;
+    --fg-on-dark-mute: #A8A296;
+
+    --pad: clamp(20px, 4.5vw, 88px);
+    --gap: clamp(64px, 9vw, 130px);
+  }
+  /* Accent variants — set on <body> */
+  body[data-accent="gold"]    { --accent: #B8945A; --accent-deep: #8C6A3F; --accent-soft: rgba(184,148,90,0.12); }
+  body[data-accent="emerald"] { --accent: #2F6B4F; --accent-deep: #1F4D38; --accent-soft: rgba(47,107,79,0.12); }
+  body[data-accent="oxblood"] { --accent: #8B2331; --accent-deep: #631923; --accent-soft: rgba(139,35,49,0.12); }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--fg-on-dark);
+    font-family: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-weight: 300; letter-spacing: -0.018em;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  html { scroll-behavior: smooth; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .serif { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -0.012em; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .sec { padding: var(--gap) var(--pad); position: relative; }
+  .sec--paper { background: var(--paper); color: var(--ink); }
+  .sec--dark { background: var(--bg); color: var(--fg-on-dark); }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+    font-weight: 500; opacity: 0.78;
+  }
+  .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; opacity: 0.55; }
+  .eyebrow--gold { color: var(--accent); opacity: 1; }
+  .eyebrow--gold::before { background: var(--accent); opacity: 0.9; }
+
+  /* Type scale */
+  .h-display {
+    font-family: "Playfair Display", Georgia, serif; font-weight: 400;
+    letter-spacing: -0.022em; line-height: 1.02;
+    font-size: clamp(40px, 6.4vw, 92px);
+  }
+  .h-section {
+    font-family: "Playfair Display", Georgia, serif; font-weight: 400;
+    letter-spacing: -0.018em; line-height: 1.08;
+    font-size: clamp(32px, 4.6vw, 60px);
+  }
+  .h-card {
+    font-family: "Playfair Display", Georgia, serif; font-weight: 500;
+    letter-spacing: -0.010em; line-height: 1.18;
+    font-size: clamp(20px, 1.65vw, 24px);
+  }
+  .lead {
+    font-size: clamp(16px, 1.25vw, 19px); line-height: 1.6; font-weight: 300;
+    color: var(--fg-on-dark-mute);
+  }
+  .sec--paper .lead { color: var(--ink-soft); }
+
+  .accent-text { color: var(--accent); }
+  .em-italic { font-style: italic; font-family: "Playfair Display", Georgia, serif; font-weight: 400; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 17px 30px; border-radius: 4px;
+    font-size: 13px; letter-spacing: 0.10em; text-transform: uppercase;
+    font-weight: 500; border: 1px solid transparent;
+    transition: all 220ms cubic-bezier(0.22,1,0.36,1);
+    white-space: nowrap; cursor: pointer;
+  }
+  .btn .arrow { transition: transform 220ms cubic-bezier(0.22,1,0.36,1); }
+  .btn:hover .arrow { transform: translateX(4px); }
+  .btn--primary { background: var(--accent); color: #fff; }
+  .btn--primary:hover { background: var(--accent-deep); transform: translateY(-1px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
+  .btn--ghost-light { background: transparent; color: var(--fg-on-dark); border-color: var(--line-dark-strong); }
+  .btn--ghost-light:hover { border-color: var(--fg-on-dark); }
+  .btn--ink { background: var(--ink); color: var(--paper); }
+  .btn--ink:hover { background: #000; transform: translateY(-1px); }
+  .btn--ghost-dark { background: transparent; color: var(--ink); border-color: var(--line-light-strong); }
+  .btn--ghost-dark:hover { border-color: var(--ink); }
+
+  /* ====================== NAV ====================== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px var(--pad);
+    transition: background 280ms ease, border-color 280ms ease, padding 280ms ease;
+    border-bottom: 1px solid transparent;
+  }
+  .nav--scrolled {
+    background: rgba(14,13,11,0.85);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: var(--line-dark);
+    padding: 14px var(--pad);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand__mark {
+    width: 36px; height: 36px; border-radius: 2px;
+    background: var(--accent); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: "Playfair Display", serif; font-weight: 500; font-size: 18px;
+    letter-spacing: 0;
+  }
+  .brand__text { display: flex; flex-direction: column; line-height: 1; gap: 3px; }
+  .brand__text b { font-family: "Playfair Display", serif; font-weight: 500; font-size: 17px; letter-spacing: -0.005em; }
+  .brand__text small { font-size: 9px; letter-spacing: 0.30em; text-transform: uppercase; opacity: 0.6; }
+  .nav__links { display: flex; gap: 36px; align-items: center; }
+  .nav__link {
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 500; opacity: 0.78;
+  }
+  .nav__link:hover { opacity: 1; color: var(--accent); }
+  .nav__cta { font-size: 12px; padding: 12px 22px; }
+  .nav__burger {
+    display: none; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 2px;
+    background: transparent; border: 1px solid var(--line-dark-strong);
+    color: var(--fg-on-dark);
+  }
+  .nav__burger svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+  @media (max-width: 960px) {
+    .nav__links { display: none; }
+    .nav__burger { display: inline-flex; }
+  }
+  .drawer {
+    position: fixed; inset: 0; z-index: 70;
+    background: rgba(14,13,11,0.97); backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 22px var(--pad) 32px;
+    display: flex; flex-direction: column;
+    transform: translateY(-100%); transition: transform 320ms cubic-bezier(0.22,1,0.36,1);
+  }
+  .drawer.is-open { transform: translateY(0); }
+  .drawer__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+  .drawer__links { display: flex; flex-direction: column; gap: 0; }
+  .drawer__link {
+    padding: 20px 0; border-bottom: 1px solid var(--line-dark);
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: 24px; letter-spacing: -0.010em;
+  }
+  .drawer__cta { margin-top: 36px; }
+
+  /* ====================== HERO ====================== */
+  .hero {
+    position: relative; min-height: 100vh; min-height: 100svh;
+    display: flex; align-items: center;
+    padding: 150px var(--pad) 100px;
+    overflow: hidden;
+  }
+  .hero__atm { position: absolute; inset: 0; pointer-events: none; }
+  .hero__halo {
+    position: absolute; width: 900px; height: 900px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-soft), transparent 60%);
+    filter: blur(80px);
+    top: -300px; right: -250px;
+  }
+  .hero__halo-2 {
+    position: absolute; width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(20,17,13,0.6), transparent 60%);
+    filter: blur(60px);
+    bottom: -250px; left: -200px;
+  }
+  .hero__grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(244,239,230,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,239,230,0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+  }
+  .hero__inner { position: relative; z-index: 2; width: 100%; }
+  .hero__title { margin: 28px 0 0; max-width: 18ch; }
+  .hero__title .em-italic { color: var(--accent); }
+  .hero__sub { margin-top: 32px; max-width: 56ch; }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
+  .hero__trust {
+    margin-top: 64px; padding-top: 32px;
+    border-top: 1px solid var(--line-dark);
+    display: flex; gap: 56px; flex-wrap: wrap;
+  }
+  .trust__item { display: flex; flex-direction: column; gap: 4px; }
+  .trust__item b {
+    font-family: "Playfair Display", serif; font-weight: 500;
+    font-size: clamp(28px, 3vw, 40px); color: var(--accent);
+    letter-spacing: -0.015em; line-height: 1;
+  }
+  .trust__item small {
+    font-size: 12px; letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--fg-on-dark-mute); font-weight: 400; max-width: 28ch;
+  }
+  @media (max-width: 700px) {
+    .hero { padding: 120px var(--pad) 72px; min-height: auto; }
+    .hero__ctas .btn { flex: 1 1 100%; justify-content: center; }
+    .hero__trust { gap: 28px; margin-top: 48px; }
+  }
+
+  /* ====================== PAIN / COST ====================== */
+  .pain__head { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; margin-bottom: 64px; align-items: end; }
+  @media (max-width: 980px) { .pain__head { grid-template-columns: 1fr; gap: 24px; } }
+  .pain__grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--line-light);
+    border: 1px solid var(--line-light);
+    border-radius: 6px; overflow: hidden;
+  }
+  @media (max-width: 900px) { .pain__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .pain__grid { grid-template-columns: 1fr; } }
+  .pain__cell {
+    background: var(--paper); padding: 36px 32px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: background 240ms ease;
+  }
+  .pain__cell:hover { background: var(--paper-elev); }
+  .pain__cell .num {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: 28px; color: var(--accent); letter-spacing: -0.010em;
+  }
+  .pain__cell h4 { margin: 0; font-family: "Playfair Display", serif; font-weight: 500; font-size: 19px; letter-spacing: -0.012em; line-height: 1.25; color: var(--ink); }
+  .pain__cell p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-soft); font-weight: 300; }
+
+  /* ====================== WHAT IS A HOLDING ====================== */
+  .what__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
+  @media (max-width: 980px) { .what__inner { grid-template-columns: 1fr; gap: 48px; } }
+  .what__visual {
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--line-dark);
+    background: linear-gradient(180deg, #1A1814, #0E0D0B);
+    aspect-ratio: 4/5;
+    position: relative; padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .what__visual::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 20%, var(--accent-soft), transparent 50%),
+      radial-gradient(ellipse at 20% 90%, rgba(255,255,255,0.03), transparent 50%);
+  }
+  .what__visual > * { position: relative; }
+  .what__diagram {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    padding: 24px 0;
+  }
+  .what__node {
+    padding: 14px 22px; border-radius: 4px;
+    border: 1px solid var(--line-dark-strong);
+    background: rgba(244,239,230,0.04);
+    font-size: 13px; letter-spacing: 0.10em; text-transform: uppercase;
+    font-weight: 500; min-width: 200px; text-align: center;
+  }
+  .what__node--top {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  .what__line {
+    width: 1px; height: 32px; background: var(--line-dark-strong);
+  }
+  .what__leaves {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; width: 100%;
+  }
+  .what__leaf {
+    padding: 12px 10px; border-radius: 4px;
+    border: 1px solid var(--line-dark-strong);
+    background: rgba(244,239,230,0.02);
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    text-align: center; color: var(--fg-on-dark-mute);
+  }
+  .what__caption {
+    margin-top: 24px; padding-top: 20px;
+    border-top: 1px solid var(--line-dark);
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-on-dark-mute);
+  }
+  .what__bullets { list-style: none; padding: 0; margin: 32px 0 0; }
+  .what__bullets li {
+    padding: 22px 0; border-bottom: 1px solid var(--line-dark);
+    display: grid; grid-template-columns: 28px 1fr; gap: 18px; align-items: baseline;
+  }
+  .what__bullets li:last-child { border-bottom: none; }
+  .what__bullets .num {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: 15px; color: var(--accent); letter-spacing: 0;
+  }
+  .what__bullets b { font-weight: 400; font-size: 17px; letter-spacing: -0.012em; display: block; margin-bottom: 4px; }
+  .what__bullets p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--fg-on-dark-mute); font-weight: 300; }
+
+  /* ====================== BENEFITS ====================== */
+  .ben__head { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; margin-bottom: 56px; align-items: end; }
+  @media (max-width: 980px) { .ben__head { grid-template-columns: 1fr; gap: 20px; } }
+  .ben__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 980px) { .ben__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .ben__grid { grid-template-columns: 1fr; } }
+  .ben__card {
+    padding: 36px 32px; border-radius: 6px;
+    background: #FFFFFF;
+    border: 1px solid var(--line-light);
+    display: flex; flex-direction: column; gap: 16px;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  }
+  .ben__card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(20,17,13,0.07);
+    border-color: var(--accent);
+  }
+  .ben__icon {
+    width: 48px; height: 48px; border-radius: 4px;
+    background: var(--accent-soft); color: var(--accent-deep);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .ben__icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+  .ben__card h3 { margin: 0; font-family: "Playfair Display", serif; font-weight: 500; font-size: 22px; letter-spacing: -0.012em; line-height: 1.2; color: var(--ink); }
+  .ben__card p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-soft); font-weight: 300; }
+
+  /* ====================== AUDIENCE ====================== */
+  .aud__inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+  @media (max-width: 980px) { .aud__inner { grid-template-columns: 1fr; gap: 40px; } }
+  .aud__list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 6px; overflow: hidden;
+  }
+  @media (max-width: 600px) { .aud__list { grid-template-columns: 1fr; } }
+  .aud__item {
+    padding: 28px 26px; background: var(--bg);
+    display: flex; flex-direction: column; gap: 8px;
+    transition: background 240ms ease;
+  }
+  .aud__item:hover { background: var(--bg-elev); }
+  .aud__item .num {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: 14px; color: var(--accent); letter-spacing: 0.10em;
+  }
+  .aud__item h4 { margin: 0; font-family: "Playfair Display", serif; font-weight: 500; font-size: 19px; letter-spacing: -0.012em; line-height: 1.2; }
+  .aud__item p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--fg-on-dark-mute); font-weight: 300; }
+
+  /* ====================== HOW IT WORKS ====================== */
+  .how__steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    margin-top: 64px;
+  }
+  @media (max-width: 900px) { .how__steps { grid-template-columns: 1fr; } }
+  .how__step {
+    padding: 36px 28px 36px 36px; position: relative;
+    border-left: 1px solid var(--line-light);
+  }
+  .how__step:first-child { border-left: none; padding-left: 0; }
+  @media (max-width: 900px) {
+    .how__step { border-left: none; border-top: 1px solid var(--line-light); padding: 28px 0; }
+    .how__step:first-child { border-top: none; padding-top: 0; }
+  }
+  .how__num {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: 56px; color: var(--accent); letter-spacing: -0.020em;
+    line-height: 1; margin-bottom: 24px;
+  }
+  .how__step h4 { margin: 0 0 12px; font-family: "Playfair Display", serif; font-weight: 500; font-size: 21px; letter-spacing: -0.012em; line-height: 1.2; color: var(--ink); }
+  .how__step p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-soft); font-weight: 300; }
+
+  /* ====================== URGENCY / REFORM ====================== */
+  .urg {
+    background:
+      radial-gradient(ellipse at 80% 0%, var(--accent-soft), transparent 50%),
+      var(--bg);
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .urg__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  @media (max-width: 980px) { .urg__inner { grid-template-columns: 1fr; gap: 40px; } }
+  .urg__title {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: clamp(32px, 4.4vw, 56px);
+    letter-spacing: -0.018em; line-height: 1.1;
+    margin: 24px 0 0;
+  }
+  .urg__title .em-italic { color: var(--accent); }
+  .urg__points {
+    border: 1px solid var(--line-dark);
+    border-radius: 6px;
+    background: rgba(244,239,230,0.02);
+    padding: 8px;
+  }
+  .urg__row {
+    display: grid; grid-template-columns: 96px 1fr; gap: 24px;
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--line-dark);
+    align-items: baseline;
+  }
+  .urg__row:last-child { border-bottom: none; }
+  .urg__row .label {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500;
+  }
+  .urg__row p { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 300; }
+
+  /* ====================== AUTHORITY ====================== */
+  .auth__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 96px; align-items: center; }
+  @media (max-width: 980px) { .auth__inner { grid-template-columns: 1fr; gap: 56px; } }
+  .auth__big {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: clamp(72px, 10vw, 168px); line-height: 0.9;
+    letter-spacing: -0.030em; color: var(--ink);
+  }
+  .auth__big small {
+    display: block; font-size: clamp(13px, 1vw, 14px);
+    letter-spacing: 0.20em; text-transform: uppercase;
+    font-family: "Sora", sans-serif; font-weight: 500;
+    color: var(--ink-soft); margin-top: 20px;
+  }
+  .auth__bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+  .auth__bullets li {
+    padding: 22px 0; border-bottom: 1px solid var(--line-light);
+    font-size: 16px; line-height: 1.5; font-weight: 300;
+    display: grid; grid-template-columns: 16px 1fr; gap: 18px; align-items: baseline;
+    color: var(--ink);
+  }
+  .auth__bullets li:last-child { border-bottom: none; }
+  .auth__bullets li::before {
+    content: ""; width: 12px; height: 1px; background: var(--accent);
+    transform: translateY(-4px);
+  }
+  .auth__regions {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;
+  }
+  .auth__region {
+    padding: 8px 16px; border-radius: 999px;
+    border: 1px solid var(--line-light-strong);
+    font-size: 12px; letter-spacing: 0.10em; text-transform: uppercase;
+    font-weight: 500; color: var(--ink-soft);
+  }
+
+  /* ====================== AREAS ====================== */
+  .areas__grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--line-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 6px; overflow: hidden;
+    margin-top: 56px;
+  }
+  @media (max-width: 980px) { .areas__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .areas__grid { grid-template-columns: 1fr; } }
+  .areas__cell {
+    background: var(--bg); padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 8px;
+    transition: background 240ms ease;
+  }
+  .areas__cell:hover { background: var(--bg-elev); }
+  .areas__cell .num {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500;
+  }
+  .areas__cell h4 { margin: 0; font-family: "Playfair Display", serif; font-weight: 500; font-size: 18px; letter-spacing: -0.010em; line-height: 1.25; }
+
+  /* ====================== FAQ ====================== */
+  .faq__inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+  @media (max-width: 980px) { .faq__inner { grid-template-columns: 1fr; gap: 32px; } }
+  .faq__list { display: flex; flex-direction: column; }
+  .faq__item {
+    border-bottom: 1px solid var(--line-light);
+  }
+  .faq__btn {
+    width: 100%; padding: 26px 0;
+    background: transparent; border: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    text-align: left; cursor: pointer;
+    font-family: "Playfair Display", serif; font-weight: 500;
+    font-size: clamp(17px, 1.5vw, 21px); letter-spacing: -0.012em;
+    color: var(--ink); line-height: 1.3;
+  }
+  .faq__btn:hover { color: var(--accent-deep); }
+  .faq__icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid var(--line-light-strong);
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 220ms ease;
+  }
+  .faq__icon svg { width: 14px; height: 14px; stroke: var(--ink); fill: none; stroke-width: 1.6; transition: transform 280ms ease; }
+  .faq__item.is-open .faq__icon { background: var(--accent); border-color: var(--accent); }
+  .faq__item.is-open .faq__icon svg { stroke: #fff; transform: rotate(45deg); }
+  .faq__answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 320ms cubic-bezier(0.22,1,0.36,1);
+  }
+  .faq__answer-inner {
+    padding: 0 0 26px;
+    font-size: 15px; line-height: 1.65; color: var(--ink-soft); font-weight: 300;
+    max-width: 60ch;
+  }
+  .faq__item.is-open .faq__answer { max-height: 600px; }
+
+  /* ====================== CTA + FORM ====================== */
+  .cta-final {
+    background:
+      radial-gradient(ellipse at 50% 0%, var(--accent-soft), transparent 50%),
+      var(--bg);
+    text-align: center;
+  }
+  .cta-final__title { max-width: 22ch; margin: 24px auto 0; }
+  .cta-final__sub { max-width: 60ch; margin: 28px auto 0; }
+  .cta-final__btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 44px; }
+
+  .form-section {
+    background: var(--paper); color: var(--ink);
+    padding-top: 0;
+  }
+  .form-section__inner {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px;
+    margin-top: -80px; position: relative; z-index: 3;
+  }
+  @media (max-width: 980px) {
+    .form-section__inner { grid-template-columns: 1fr; gap: 40px; margin-top: -60px; }
+  }
+  .form-section__intro { padding-top: 80px; }
+  .form-card {
+    background: #FFFFFF;
+    border: 1px solid var(--line-light);
+    border-radius: 8px; padding: 48px;
+    box-shadow: 0 30px 60px rgba(20,17,13,0.10);
+  }
+  @media (max-width: 700px) { .form-card { padding: 28px 22px; } }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+  .form-grid .full { grid-column: 1 / -1; }
+  .form-field { display: flex; flex-direction: column; gap: 8px; }
+  .form-field label {
+    font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 500;
+  }
+  .form-field label .req { color: var(--accent-deep); }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: inherit; font-size: 15px;
+    padding: 14px 16px;
+    border: 1px solid var(--line-light-strong);
+    border-radius: 4px;
+    background: #FFFFFF; color: var(--ink);
+    font-weight: 300;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .form-field textarea { resize: vertical; min-height: 100px; }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .form-field.error input,
+  .form-field.error select,
+  .form-field.error textarea { border-color: #C0392B; }
+  .form-field .err-msg { color: #C0392B; font-size: 12px; min-height: 14px; }
+  .form-submit {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 32px; border-radius: 4px;
+    background: var(--accent); color: #fff;
+    border: none; font-size: 13px; letter-spacing: 0.10em;
+    text-transform: uppercase; font-weight: 500; cursor: pointer;
+    transition: background 200ms ease, transform 200ms ease;
+    margin-top: 12px;
+  }
+  .form-submit:hover { background: var(--accent-deep); transform: translateY(-1px); }
+  .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .form-success {
+    display: none;
+    padding: 56px 40px; text-align: center;
+    border: 1px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 8px;
+  }
+  .form-success.is-visible { display: block; }
+  .form-success svg { width: 56px; height: 56px; color: var(--accent-deep); margin-bottom: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+  .form-success h3 { margin: 0 0 12px; font-family: "Playfair Display", serif; font-weight: 500; font-size: 28px; color: var(--ink); }
+  .form-success p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
+  .privacy-note { margin-top: 16px; font-size: 12px; color: var(--ink-mute); line-height: 1.5; }
+
+  /* ====================== FOOTER ====================== */
+  .footer {
+    background: var(--bg); color: var(--fg-on-dark);
+    padding: 80px var(--pad) 32px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .footer__top {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px;
+  }
+  @media (max-width: 900px) { .footer__top { grid-template-columns: 1fr 1fr; gap: 32px; } }
+  @media (max-width: 540px) { .footer__top { grid-template-columns: 1fr; gap: 32px; } }
+  .footer__col h5 {
+    margin: 0 0 18px; font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase;
+    font-weight: 500; color: var(--accent);
+  }
+  .footer__col p, .footer__col a {
+    display: block; margin: 0 0 10px; font-size: 14px; line-height: 1.55;
+    color: var(--fg-on-dark-mute); font-weight: 300;
+  }
+  .footer__col a:hover { color: var(--fg-on-dark); }
+  .footer__brand { margin-bottom: 20px; }
+  .footer__big {
+    font-family: "Playfair Display", serif; font-weight: 400;
+    font-size: clamp(36px, 4vw, 56px); line-height: 1; margin: 16px 0 0;
+    color: var(--accent); letter-spacing: -0.020em;
+  }
+  .footer__bottom {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line-dark);
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-on-dark-mute);
+  }
+
+  /* ====================== WHATSAPP FLOAT ====================== */
+  .wa {
+    position: fixed; right: 20px; bottom: 20px; z-index: 65;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px 14px 16px; border-radius: 999px;
+    background: #25D366; color: #FFFFFF;
+    box-shadow: 0 14px 32px rgba(37,211,102,0.35), 0 0 0 4px rgba(37,211,102,0.10);
+    font-size: 14px; font-weight: 500; letter-spacing: 0.01em;
+    transition: transform 220ms cubic-bezier(0.22,1,0.36,1), box-shadow 220ms ease;
+  }
+  .wa:hover { transform: translateY(-2px); }
+  .wa svg { width: 22px; height: 22px; fill: currentColor; }
+  @media (max-width: 600px) {
+    .wa { padding: 12px; right: 14px; bottom: 14px; }
+    .wa span { display: none; }
+  }
+
+  /* Mobile fine-tuning */
+  @media (max-width: 700px) {
+    .h-display { font-size: clamp(36px, 9vw, 52px); }
+    .h-section { font-size: clamp(28px, 7.5vw, 40px); }
+    .btn { padding: 14px 22px; font-size: 12px; }
+    .pain__cell { padding: 28px 22px; }
+    .ben__card { padding: 28px 24px; }
+    .what__visual { padding: 28px; }
+    .auth__big { font-size: clamp(64px, 18vw, 96px); }
+    .urg__row { grid-template-columns: 1fr; gap: 8px; padding: 18px 18px; }
+    .form-section__inner { margin-top: -40px; }
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1); }
+  .reveal.is-in { opacity: 1; transform: none; }
+
+  /* Tweaks panel */
+  .tweaks {
+    position: fixed; right: 20px; top: 20px; z-index: 80;
+    width: 280px; padding: 20px;
+    background: rgba(14,13,11,0.95); backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--line-dark-strong); border-radius: 8px;
+    color: var(--fg-on-dark);
+    display: none;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  }
+  .tweaks.is-visible { display: block; }
+  .tweaks__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .tweaks__title { font-family: "Playfair Display", serif; font-weight: 500; font-size: 16px; }
+  .tweaks__close { background: transparent; border: none; color: var(--fg-on-dark); font-size: 18px; cursor: pointer; padding: 4px; opacity: 0.7; }
+  .tweaks__close:hover { opacity: 1; }
+  .tweaks__group { margin-bottom: 18px; }
+  .tweaks__label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-on-dark-mute); margin-bottom: 10px; }
+  .tweaks__row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tweaks__opt {
+    flex: 1; min-width: 60px; padding: 10px 12px;
+    background: transparent;
+    border: 1px solid var(--line-dark-strong); border-radius: 4px;
+    color: var(--fg-on-dark); font-size: 12px; cursor: pointer;
+    text-align: center;
+    transition: all 180ms ease;
+  }
+  .tweaks__opt:hover { border-color: var(--fg-on-dark); }
+  .tweaks__opt.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .tweaks__swatch {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  .tweaks__swatch.is-active { border-color: #fff; }
+</style>
+</head>
+<body data-accent="gold">
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav" id="nav" data-screen-label="Nav">
+  <a href="#top" class="brand">
+    <span class="brand__mark">H</span>
+    <span class="brand__text">
+      <b>Holdings &amp; Sucessão</b>
+      <small>Planejamento Patrimonial</small>
+    </span>
+  </a>
+  <div class="nav__links">
+    <a class="nav__link" href="#por-que">Por que</a>
+    <a class="nav__link" href="#beneficios">Benefícios</a>
+    <a class="nav__link" href="#processo">Processo</a>
+    <a class="nav__link" href="#autoridade">Sobre</a>
+    <a class="nav__link" href="#faq">FAQ</a>
+    <a class="btn btn--primary nav__cta" href="#contato">Agendar diagnóstico</a>
+  </div>
+  <button class="nav__burger" id="burger" aria-label="Abrir menu">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+
+<div class="drawer" id="drawer">
+  <div class="drawer__top">
+    <a href="#top" class="brand" data-drawer-close>
+      <span class="brand__mark">H</span>
+      <span class="brand__text">
+        <b>Holdings &amp; Sucessão</b>
+        <small>Planejamento Patrimonial</small>
+      </span>
+    </a>
+    <button class="nav__burger" id="drawer-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="drawer__links">
+    <a class="drawer__link" href="#por-que" data-drawer-close>Por que estruturar</a>
+    <a class="drawer__link" href="#o-que-e" data-drawer-close>O que é uma holding</a>
+    <a class="drawer__link" href="#beneficios" data-drawer-close>Benefícios</a>
+    <a class="drawer__link" href="#para-quem" data-drawer-close>Para quem é indicado</a>
+    <a class="drawer__link" href="#processo" data-drawer-close>Como funciona</a>
+    <a class="drawer__link" href="#urgencia" data-drawer-close>Reforma Tributária</a>
+    <a class="drawer__link" href="#autoridade" data-drawer-close>Autoridade</a>
+    <a class="drawer__link" href="#faq" data-drawer-close>Perguntas frequentes</a>
+  </div>
+  <a class="btn btn--primary drawer__cta" href="#contato" data-drawer-close>
+    Agendar diagnóstico <span class="arrow">→</span>
+  </a>
+</div>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top" data-screen-label="01 Hero">
+  <div class="hero__atm" aria-hidden="true">
+    <div class="hero__halo"></div>
+    <div class="hero__halo-2"></div>
+    <div class="hero__grid"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <span class="eyebrow eyebrow--gold">Holdings · Planejamento patrimonial &amp; sucessório</span>
+    <h1 class="hero__title h-display" id="hero-title">
+      Proteja o seu patrimônio. Planeje a <span class="em-italic">sucessão</span>.<br/>
+      Garanta o futuro que sua família merece.
+    </h1>
+    <p class="hero__sub lead">
+      Estruturamos holdings sob medida para empresários, profissionais liberais e investidores que querem reduzir a carga tributária, blindar bens contra riscos e organizar a sucessão sem inventário judicial — com mais de 15 anos de experiência em direito patrimonial.
+    </p>
+    <div class="hero__ctas">
+      <a href="#contato" class="btn btn--primary">
+        Agendar diagnóstico gratuito
+        <span class="arrow">→</span>
+      </a>
+      <a href="#o-que-e" class="btn btn--ghost-light">
+        Entender como funciona
+      </a>
+    </div>
+
+    <div class="hero__trust">
+      <div class="trust__item">
+        <b>15+</b>
+        <small>Anos estruturando holdings familiares e empresariais</small>
+      </div>
+      <div class="trust__item">
+        <b>4</b>
+        <small>Estados de atuação — PB, PE, RJ e BA</small>
+      </div>
+      <div class="trust__item">
+        <b>100%</b>
+        <small>Soluções sob medida — sem fórmulas prontas</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PAIN / COST OF INACTION ============================ -->
+<section class="sec sec--paper" id="por-que" data-screen-label="02 Custo da inação">
+  <div class="container">
+    <div class="pain__head">
+      <div>
+        <span class="eyebrow" style="color: var(--ink-soft);">O custo de não planejar</span>
+      </div>
+      <h2 class="h-section">
+        Sem planejamento, anos de trabalho podem ser <span style="color: var(--accent);">corroídos</span> por tributos, conflitos e inventários judiciais.
+      </h2>
+    </div>
+
+    <div class="pain__grid">
+      <div class="pain__cell">
+        <span class="num">01</span>
+        <h4>Inventário judicial</h4>
+        <p>Processos que podem se arrastar por anos, com custos de até 20% do valor do patrimônio entre tributos, honorários e taxas.</p>
+      </div>
+      <div class="pain__cell">
+        <span class="num">02</span>
+        <h4>Conflitos familiares</h4>
+        <p>Disputas entre herdeiros que comprometem relações, dividem famílias e fragmentam o patrimônio construído.</p>
+      </div>
+      <div class="pain__cell">
+        <span class="num">03</span>
+        <h4>Tributação excessiva</h4>
+        <p>ITCMD, ITBI, IR sobre ganho de capital e tributação sobre aluguéis — custos evitáveis com a estrutura jurídica adequada.</p>
+      </div>
+      <div class="pain__cell">
+        <span class="num">04</span>
+        <h4>Exposição a riscos</h4>
+        <p>Patrimônio pessoal exposto a passivos empresariais, ações trabalhistas, fiscais e pleitos de terceiros.</p>
+      </div>
+      <div class="pain__cell">
+        <span class="num">05</span>
+        <h4>Descontinuidade do negócio</h4>
+        <p>Sem governança definida, o falecimento do titular pode paralisar operações e desvalorizar a empresa.</p>
+      </div>
+      <div class="pain__cell">
+        <span class="num">06</span>
+        <h4>Perda de oportunidades</h4>
+        <p>Falta de organização patrimonial inviabiliza investimentos, reestruturações societárias e operações estratégicas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHAT IS A HOLDING ============================ -->
+<section class="sec sec--dark" id="o-que-e" data-screen-label="03 O que é">
+  <div class="container what__inner">
+    <div class="what__visual">
+      <div>
+        <span class="eyebrow eyebrow--gold">Estrutura simplificada</span>
+        <p style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 22px; line-height: 1.3; margin: 16px 0 0; max-width: 24ch; letter-spacing: -0.012em;">
+          Uma holding centraliza a propriedade dos seus bens em uma pessoa jurídica.
+        </p>
+      </div>
+
+      <div class="what__diagram">
+        <div class="what__node what__node--top">Titular / Família</div>
+        <div class="what__line"></div>
+        <div class="what__node">Holding patrimonial</div>
+        <div class="what__line"></div>
+        <div class="what__leaves">
+          <div class="what__leaf">Imóveis</div>
+          <div class="what__leaf">Empresas</div>
+          <div class="what__leaf">Investimentos</div>
+        </div>
+      </div>
+
+      <div class="what__caption">
+        Os bens deixam o nome da pessoa física e passam a ser participações societárias da holding.
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow eyebrow--gold">O que é uma holding</span>
+      <h2 class="h-section" style="margin-top: 24px;">
+        Uma <span class="em-italic accent-text">estrutura jurídica</span> que organiza, protege e transmite patrimônio com eficiência.
+      </h2>
+      <p class="lead" style="margin-top: 24px;">
+        Holdings são empresas constituídas para administrar bens e participações de uma família ou grupo empresarial. A escolha do tipo, do regime tributário e das cláusulas contratuais determina o impacto real — em proteção, economia e governança.
+      </p>
+
+      <ul class="what__bullets">
+        <li>
+          <span class="num">01</span>
+          <div>
+            <b>Holding patrimonial</b>
+            <p>Concentra imóveis, investimentos e demais ativos pessoais sob uma única pessoa jurídica.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div>
+            <b>Holding familiar</b>
+            <p>Estrutura voltada à organização sucessória entre cônjuges, filhos e demais herdeiros.</p>
+          </div>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <div>
+            <b>Holding empresarial</b>
+            <p>Centraliza participações em empresas operacionais, organizando governança e dividendos.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BENEFITS ============================ -->
+<section class="sec sec--paper" id="beneficios" data-screen-label="04 Benefícios">
+  <div class="container">
+    <div class="ben__head">
+      <div><span class="eyebrow" style="color: var(--ink-soft);">Por que estruturar</span></div>
+      <h2 class="h-section">
+        Seis razões para estruturar uma holding <span class="em-italic accent-text">ainda este ano</span>.
+      </h2>
+    </div>
+
+    <div class="ben__grid">
+      <div class="ben__card">
+        <div class="ben__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6z"/></svg>
+        </div>
+        <h3>Blindagem patrimonial</h3>
+        <p>Separação jurídica entre patrimônio pessoal e riscos empresariais — proteção contra passivos, ações judiciais e oscilações do negócio.</p>
+      </div>
+
+      <div class="ben__card">
+        <div class="ben__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Redução tributária</h3>
+        <p>Otimização da tributação sobre aluguéis, dividendos e ganho de capital, dentro da legalidade e com economia significativa frente à pessoa física.</p>
+      </div>
+
+      <div class="ben__card">
+        <div class="ben__icon">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3a4 4 0 0 1 0 8M21 21v-2a4 4 0 0 0-3-3.85"/></svg>
+        </div>
+        <h3>Sucessão sem inventário</h3>
+        <p>Transmissão de quotas e ações conforme planejado — sem inventário judicial, sem disputas e com privacidade preservada.</p>
+      </div>
+
+      <div class="ben__card">
+        <div class="ben__icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <h3>Governança organizada</h3>
+        <p>Regras claras de gestão, retirada de pró-labore, distribuição de lucros e ingresso de novos sócios — prevenindo conflitos antes que surjam.</p>
+      </div>
+
+      <div class="ben__card">
+        <div class="ben__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Continuidade empresarial</h3>
+        <p>Garantia de que a empresa segue operando sem rupturas em caso de falecimento, incapacidade ou divergência entre sócios.</p>
+      </div>
+
+      <div class="ben__card">
+        <div class="ben__icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        </div>
+        <h3>Eficiência operacional</h3>
+        <p>Centralização da administração de imóveis, investimentos e participações — com uma só contabilidade, uma só estratégia, mais clareza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AUDIENCE ============================ -->
+<section class="sec sec--dark" id="para-quem" data-screen-label="05 Para quem">
+  <div class="container aud__inner">
+    <div>
+      <span class="eyebrow eyebrow--gold">Para quem é indicado</span>
+      <h2 class="h-section" style="margin-top: 24px;">
+        Holdings são para quem construiu — e quer <span class="em-italic accent-text">preservar</span>.
+      </h2>
+      <p class="lead" style="margin-top: 24px; max-width: 38ch;">
+        Não importa o tamanho do patrimônio. Importa a clareza sobre o que se quer proteger, transmitir e fazer crescer.
+      </p>
+    </div>
+
+    <div class="aud__list">
+      <div class="aud__item">
+        <span class="num">01 · Empresários</span>
+        <h4>Donos de empresas familiares ou em sociedade</h4>
+        <p>Que querem organizar sucessão, separar patrimônio e profissionalizar a governança.</p>
+      </div>
+      <div class="aud__item">
+        <span class="num">02 · Profissionais liberais</span>
+        <h4>Médicos, advogados, engenheiros e consultores</h4>
+        <p>Que buscam proteção patrimonial frente aos riscos da atividade profissional.</p>
+      </div>
+      <div class="aud__item">
+        <span class="num">03 · Investidores</span>
+        <h4>Pessoas com imóveis, participações e ativos financeiros</h4>
+        <p>Que precisam de uma estrutura eficiente para administrar e transmitir o portfólio.</p>
+      </div>
+      <div class="aud__item">
+        <span class="num">04 · Famílias</span>
+        <h4>Núcleos com herdeiros menores, dependentes ou incapazes</h4>
+        <p>Que querem assegurar continuidade financeira e proteção a pessoas vulneráveis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="sec sec--paper" id="processo" data-screen-label="06 Como funciona">
+  <div class="container">
+    <div class="ben__head">
+      <div><span class="eyebrow" style="color: var(--ink-soft);">Como trabalhamos</span></div>
+      <h2 class="h-section">
+        Um processo <span class="em-italic accent-text">técnico, conduzido</span> e sob medida — do diagnóstico à execução.
+      </h2>
+    </div>
+
+    <div class="how__steps">
+      <div class="how__step">
+        <div class="how__num">01</div>
+        <h4>Diagnóstico</h4>
+        <p>Mapeamos sua situação patrimonial, familiar e empresarial — bens, participações, dependentes, tributação atual e objetivos.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">02</div>
+        <h4>Planejamento</h4>
+        <p>Desenhamos o escopo jurídico ideal: tipo de holding, regime tributário, cláusulas societárias e estratégia sucessória.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">03</div>
+        <h4>Constituição</h4>
+        <p>Estruturamos a holding com estrita legalidade — atos societários, integralização de bens e regularização perante órgãos públicos.</p>
+      </div>
+      <div class="how__step">
+        <div class="how__num">04</div>
+        <h4>Acompanhamento</h4>
+        <p>Atualizamos a estrutura conforme novos bens, mudanças familiares ou alterações legais — incluindo a Reforma Tributária.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ URGENCY / TAX REFORM ============================ -->
+<section class="sec urg" id="urgencia" data-screen-label="07 Urgência">
+  <div class="container urg__inner">
+    <div>
+      <span class="eyebrow eyebrow--gold">Reforma Tributária · 2025–2033</span>
+      <h2 class="urg__title">
+        A janela para planejar com vantagem é <span class="em-italic">agora</span>.
+      </h2>
+      <p class="lead" style="margin-top: 24px; max-width: 44ch;">
+        A Reforma Tributária altera substancialmente a forma como bens, doações e heranças serão tributados nos próximos anos. Quem planeja antes da transição preserva regras mais favoráveis e evita correções de rota custosas depois.
+      </p>
+      <a href="#contato" class="btn btn--primary" style="margin-top: 32px;">
+        Antecipar meu planejamento
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="urg__points">
+      <div class="urg__row">
+        <span class="label">ITCMD</span>
+        <p>Progressividade obrigatória do imposto sobre transmissão — alíquotas tendem a subir nos próximos anos.</p>
+      </div>
+      <div class="urg__row">
+        <span class="label">Doações</span>
+        <p>Mudanças nas regras de tributação sobre doações em vida e usufruto exigem revisão das estratégias atuais.</p>
+      </div>
+      <div class="urg__row">
+        <span class="label">IBS / CBS</span>
+        <p>Novos tributos sobre consumo impactam estruturas com receitas operacionais — exige revisão societária.</p>
+      </div>
+      <div class="urg__row">
+        <span class="label">Janela</span>
+        <p>O período de transição (2025–2033) cria oportunidades específicas para reestruturações patrimoniais bem desenhadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AUTHORITY ============================ -->
+<section class="sec sec--paper" id="autoridade" data-screen-label="08 Autoridade">
+  <div class="container auth__inner">
+    <div>
+      <div class="auth__big">15+
+        <small>Anos estruturando holdings no Nordeste</small>
+      </div>
+      <p class="lead" style="margin-top: 32px; max-width: 44ch;">
+        Atuamos há mais de 15 anos junto a empresários e famílias, estruturando dezenas de holdings com profundidade técnica e atenção à realidade pessoal de cada cliente.
+      </p>
+      <div class="auth__regions">
+        <span class="auth__region">Paraíba</span>
+        <span class="auth__region">Pernambuco</span>
+        <span class="auth__region">Rio de Janeiro</span>
+        <span class="auth__region">Bahia</span>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow" style="color: var(--ink-soft);">Por que escolher</span>
+      <ul class="auth__bullets" style="margin-top: 24px;">
+        <li>Soluções sob medida — recusamos fórmulas prontas e modelos genéricos.</li>
+        <li>Equipe multidisciplinar: societário, tributário, sucessório e imobiliário sob a mesma coordenação.</li>
+        <li>Rede ampla de colaboradores externos: contadores, despachantes e avaliadores qualificados.</li>
+        <li>Acompanhamento contínuo da estrutura ao longo do tempo, não apenas na constituição.</li>
+        <li>Confidencialidade absoluta — sigilo profissional como princípio inegociável.</li>
+        <li>Atuação consultiva — explicamos cada decisão e justificamos cada cláusula.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AREAS ============================ -->
+<section class="sec sec--dark" data-screen-label="09 Áreas">
+  <div class="container">
+    <div class="pain__head" style="margin-bottom: 0;">
+      <div><span class="eyebrow eyebrow--gold">Áreas conexas</span></div>
+      <h2 class="h-section">
+        Suporte completo em <span class="em-italic accent-text">direito empresarial</span>.
+      </h2>
+    </div>
+
+    <div class="areas__grid">
+      <div class="areas__cell"><span class="num">01</span><h4>Direito Tributário</h4></div>
+      <div class="areas__cell"><span class="num">02</span><h4>Direito Societário</h4></div>
+      <div class="areas__cell"><span class="num">03</span><h4>Direito Imobiliário e de Registros</h4></div>
+      <div class="areas__cell"><span class="num">04</span><h4>Direito Trabalhista</h4></div>
+      <div class="areas__cell"><span class="num">05</span><h4>Licitações e Contratos</h4></div>
+      <div class="areas__cell"><span class="num">06</span><h4>Propriedade Industrial</h4></div>
+      <div class="areas__cell"><span class="num">07</span><h4>Aquisições e Vendas</h4></div>
+      <div class="areas__cell"><span class="num">08</span><h4>Reestruturações Societárias</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="sec sec--paper" id="faq" data-screen-label="10 FAQ">
+  <div class="container faq__inner">
+    <div>
+      <span class="eyebrow" style="color: var(--ink-soft);">Perguntas frequentes</span>
+      <h2 class="h-section" style="margin-top: 24px;">
+        Dúvidas comuns antes de começar.
+      </h2>
+      <p class="lead" style="margin-top: 24px;">
+        As respostas aqui são gerais. Cada estrutura precisa ser desenhada considerando sua realidade específica.
+      </p>
+    </div>
+
+    <div class="faq__list">
+      <div class="faq__item">
+        <button class="faq__btn">
+          <span>Preciso ter um patrimônio muito alto para justificar uma holding?</span>
+          <span class="faq__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq__answer"><div class="faq__answer-inner">
+          Não. O ponto de equilíbrio depende muito mais da composição do patrimônio (imóveis para locação, participações empresariais, número de herdeiros) do que do valor absoluto. Avaliamos isso no diagnóstico inicial.
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__btn">
+          <span>Quanto tempo leva para estruturar uma holding?</span>
+          <span class="faq__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq__answer"><div class="faq__answer-inner">
+          Em geral, entre 60 e 120 dias, dependendo da complexidade do patrimônio, do número de bens a integralizar e da agilidade dos órgãos de registro envolvidos.
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__btn">
+          <span>Existe risco de a Receita Federal questionar a estrutura?</span>
+          <span class="faq__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq__answer"><div class="faq__answer-inner">
+          Quando a holding tem propósito negocial real e é constituída com técnica — observando legalidade, escrituração contábil e regularidade fiscal — os riscos são significativamente reduzidos. Estruturas mal desenhadas, sim, são alvo frequente de fiscalização.
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__btn">
+          <span>Posso criar uma holding mesmo já tendo feito doações em vida?</span>
+          <span class="faq__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq__answer"><div class="faq__answer-inner">
+          Sim. A holding pode ser estruturada para integrar o patrimônio remanescente e organizar a governança entre os herdeiros, mesmo após doações anteriores.
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__btn">
+          <span>A holding evita totalmente o inventário?</span>
+          <span class="faq__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq__answer"><div class="faq__answer-inner">
+          Quando bem estruturada, sim — a transmissão das quotas ocorre conforme as regras societárias previstas no contrato social, sem necessidade de processo judicial de inventário sobre os bens já integralizados.
+        </div></div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__btn">
+          <span>Quanto custa estruturar uma holding?</span>
+          <span class="faq__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq__answer"><div class="faq__answer-inner">
+          O investimento varia conforme a complexidade do patrimônio e o escopo do trabalho. No diagnóstico inicial apresentamos uma proposta detalhada, com escopo e cronograma claros — sem cobranças por etapas não acordadas.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="sec cta-final" data-screen-label="11 CTA Final">
+  <div class="container">
+    <span class="eyebrow eyebrow--gold" style="display: inline-flex;">Próximo passo</span>
+    <h2 class="cta-final__title h-display">
+      Vamos desenhar a sua estrutura <span class="em-italic accent-text">com calma</span> e técnica.
+    </h2>
+    <p class="cta-final__sub lead">
+      Agende um diagnóstico gratuito de até 60 minutos. Vamos entender sua realidade, suas prioridades e indicar — com clareza — se uma holding faz sentido para você.
+    </p>
+    <div class="cta-final__btns">
+      <a href="#contato" class="btn btn--primary">
+        Agendar diagnóstico gratuito
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn--ghost-light">
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FORM ============================ -->
+<section class="sec form-section" id="contato" data-screen-label="12 Formulário">
+  <div class="container form-section__inner">
+    <div class="form-section__intro">
+      <span class="eyebrow" style="color: var(--ink-soft);">Diagnóstico patrimonial</span>
+      <h2 class="h-section" style="margin-top: 24px;">
+        Conte um pouco sobre sua <span class="em-italic accent-text">realidade</span>.
+      </h2>
+      <p class="lead" style="margin-top: 24px;">
+        Em até 1 dia útil, um especialista entra em contato para agendar uma conversa inicial — gratuita e sem compromisso.
+      </p>
+      <p class="lead" style="margin-top: 16px; font-size: 14px;">
+        <b style="font-weight: 500; color: var(--ink);">Sigilo profissional garantido.</b> Todas as informações são tratadas com confidencialidade absoluta.
+      </p>
+    </div>
+
+    <div>
+      <form class="form-card" id="lead-form" novalidate>
+        <div class="form-grid">
+          <div class="form-field full">
+            <label for="f-name">Nome completo <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" required/>
+            <span class="err-msg" data-err-for="name"></span>
+          </div>
+          <div class="form-field">
+            <label for="f-phone">WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="f-phone" name="phone" placeholder="(00) 00000-0000" required/>
+            <span class="err-msg" data-err-for="phone"></span>
+          </div>
+          <div class="form-field">
+            <label for="f-email">E-mail <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" required/>
+            <span class="err-msg" data-err-for="email"></span>
+          </div>
+          <div class="form-field">
+            <label for="f-city">Cidade / Estado</label>
+            <input type="text" id="f-city" name="city" placeholder="Ex: Recife / PE"/>
+          </div>
+          <div class="form-field">
+            <label for="f-profile">Perfil <span class="req">*</span></label>
+            <select id="f-profile" name="profile" required>
+              <option value="">Selecione...</option>
+              <option>Empresário(a)</option>
+              <option>Profissional liberal</option>
+              <option>Investidor(a)</option>
+              <option>Família com herdeiros</option>
+              <option>Outro</option>
+            </select>
+            <span class="err-msg" data-err-for="profile"></span>
+          </div>
+          <div class="form-field full">
+            <label for="f-assets">Composição do patrimônio (múltipla) <span class="req">*</span></label>
+            <select id="f-assets" name="assets" required>
+              <option value="">Selecione o predominante...</option>
+              <option>Imóveis (residenciais e/ou comerciais)</option>
+              <option>Participações em empresas</option>
+              <option>Investimentos financeiros</option>
+              <option>Combinação dos itens acima</option>
+              <option>Ainda estou estruturando</option>
+            </select>
+            <span class="err-msg" data-err-for="assets"></span>
+          </div>
+          <div class="form-field full">
+            <label for="f-message">Conte brevemente seu objetivo (opcional)</label>
+            <textarea id="f-message" name="message" placeholder="Ex: tenho 3 imóveis para locação e duas empresas familiares; quero organizar a sucessão entre meus filhos."></textarea>
+          </div>
+          <div class="form-field full">
+            <button type="submit" class="form-submit">
+              Solicitar diagnóstico
+              <span class="arrow">→</span>
+            </button>
+            <p class="privacy-note">
+              Ao enviar, você concorda em ser contatado por um especialista. Seus dados não serão compartilhados com terceiros.
+            </p>
+          </div>
+        </div>
+      </form>
+
+      <div class="form-success" id="form-success" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+        <h3>Recebemos seus dados.</h3>
+        <p>Em até 1 dia útil, um especialista entra em contato pelo WhatsApp ou e-mail informado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__col">
+        <div class="footer__brand">
+          <div class="brand">
+            <span class="brand__mark">H</span>
+            <span class="brand__text">
+              <b>Holdings &amp; Sucessão</b>
+              <small>Planejamento Patrimonial</small>
+            </span>
+          </div>
+        </div>
+        <p>Estruturamos holdings para proteger patrimônio, reduzir tributação e organizar sucessão familiar.</p>
+        <p class="footer__big">15+ anos<br/>de experiência.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Áreas</h5>
+        <a href="#beneficios">Holdings patrimoniais</a>
+        <a href="#beneficios">Holdings familiares</a>
+        <a href="#beneficios">Holdings empresariais</a>
+        <a href="#urgencia">Reforma Tributária</a>
+      </div>
+
+      <div class="footer__col">
+        <h5>Navegar</h5>
+        <a href="#por-que">O custo de não planejar</a>
+        <a href="#o-que-e">O que é uma holding</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#faq">Perguntas frequentes</a>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contato</h5>
+        <p>Atendimento PB · PE · RJ · BA</p>
+        <a href="mailto:contato@holdings.adv.br">contato@holdings.adv.br</a>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp comercial</a>
+        <a href="#contato">Agendar diagnóstico</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2025 · Holdings &amp; Sucessão</span>
+      <span>OAB/PB · OAB/PE · OAB/RJ · OAB/BA</span>
+      <span>Política de privacidade</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ WHATSAPP FLOAT ============================ -->
+<a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="wa" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.3 31.6l7.9-2.1A15.6 15.6 0 0 0 31.6 16C31.6 7.4 24.6.4 16 .4Zm0 28.4c-2.5 0-4.9-.7-7-2l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A12.7 12.7 0 1 1 28.7 16c0 7-5.7 12.7-12.7 12.7Zm7-9.5c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.8-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.1-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6 0-.2-.9-2.2-1.2-3-.3-.7-.7-.6-.9-.6h-.8c-.2 0-.6.1-1 .4-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.4 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.4.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5Z"/></svg>
+  <span>Falar no WhatsApp</span>
+</a>
+
+<!-- ============================ TWEAKS PANEL ============================ -->
+<div class="tweaks" id="tweaks">
+  <div class="tweaks__head">
+    <span class="tweaks__title">Tweaks</span>
+    <button class="tweaks__close" id="tweaks-close" aria-label="Fechar">×</button>
+  </div>
+
+  <div class="tweaks__group">
+    <div class="tweaks__label">Cor de acento</div>
+    <div class="tweaks__row">
+      <button class="tweaks__swatch is-active" data-accent-pick="gold" style="background:#B8945A;" aria-label="Dourado champagne"></button>
+      <button class="tweaks__swatch" data-accent-pick="emerald" style="background:#2F6B4F;" aria-label="Verde esmeralda"></button>
+      <button class="tweaks__swatch" data-accent-pick="oxblood" style="background:#8B2331;" aria-label="Bordô"></button>
+    </div>
+  </div>
+
+  <div class="tweaks__group">
+    <div class="tweaks__label">Headline do Hero</div>
+    <div class="tweaks__row" style="flex-direction: column;">
+      <button class="tweaks__opt is-active" data-headline="A">A · Patrimônio + Sucessão</button>
+      <button class="tweaks__opt" data-headline="B">B · Reforma Tributária</button>
+      <button class="tweaks__opt" data-headline="C">C · Sem inventário</button>
+    </div>
+  </div>
+
+  <div class="tweaks__group">
+    <div class="tweaks__label">CTA principal</div>
+    <div class="tweaks__row" style="flex-direction: column;">
+      <button class="tweaks__opt is-active" data-cta="diagnostico">Agendar diagnóstico</button>
+      <button class="tweaks__opt" data-cta="whatsapp">Falar no WhatsApp</button>
+      <button class="tweaks__opt" data-cta="material">Receber material</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/*EDITMODE-BEGIN*/
+const TWEAKS_DEFAULT = {
+  "accent": "gold",
+  "headline": "A",
+  "cta": "diagnostico"
+};
+/*EDITMODE-END*/
+
+(function () {
+  // ----- Nav scrolled state -----
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ----- Drawer -----
+  const drawer = document.getElementById('drawer');
+  document.getElementById('burger').addEventListener('click', () => drawer.classList.add('is-open'));
+  document.getElementById('drawer-close').addEventListener('click', () => drawer.classList.remove('is-open'));
+  document.querySelectorAll('[data-drawer-close]').forEach(a => a.addEventListener('click', () => drawer.classList.remove('is-open')));
+
+  // ----- FAQ accordion -----
+  document.querySelectorAll('.faq__item').forEach(item => {
+    const btn = item.querySelector('.faq__btn');
+    btn.addEventListener('click', () => item.classList.toggle('is-open'));
+  });
+
+  // ----- Reveal on scroll -----
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-in'));
+  }
+
+  // ----- Form -----
+  const form = document.getElementById('lead-form');
+  const success = document.getElementById('form-success');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    const required = ['name','phone','email','profile','assets'];
+    required.forEach(k => {
+      const input = form.querySelector(`[name="${k}"]`);
+      const field = input.closest('.form-field');
+      const errEl = form.querySelector(`[data-err-for="${k}"]`);
+      let msg = '';
+      if (!input.value.trim()) msg = 'Campo obrigatório.';
+      else if (k === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value)) msg = 'Informe um e-mail válido.';
+      else if (k === 'phone' && input.value.replace(/\D/g,'').length < 10) msg = 'Informe um telefone válido.';
+      if (msg) { valid = false; field.classList.add('error'); errEl.textContent = msg; }
+      else { field.classList.remove('error'); errEl.textContent = ''; }
+    });
+    if (!valid) return;
+    form.style.display = 'none';
+    success.classList.add('is-visible');
+    success.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
+
+  // Phone mask
+  const phone = document.getElementById('f-phone');
+  phone.addEventListener('input', () => {
+    let v = phone.value.replace(/\D/g,'').slice(0,11);
+    if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+    else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    phone.value = v;
+  });
+
+  // ============== TWEAKS ==============
+  const HEADLINES = {
+    A: 'Proteja o seu patrimônio. Planeje a <span class="em-italic">sucessão</span>.<br/>Garanta o futuro que sua família merece.',
+    B: 'A <span class="em-italic">Reforma Tributária</span> está em curso.<br/>Estruture sua holding antes que as regras mudem.',
+    C: 'Sucessão sem <span class="em-italic">inventário</span>.<br/>Patrimônio protegido. Família em paz.'
+  };
+  const CTA_LABELS = {
+    diagnostico: 'Agendar diagnóstico gratuito',
+    whatsapp: 'Falar no WhatsApp agora',
+    material: 'Receber guia da Holding'
+  };
+  const CTA_HREFS = {
+    diagnostico: '#contato',
+    whatsapp: 'https://wa.me/5500000000000',
+    material: '#contato'
+  };
+
+  const state = Object.assign({}, TWEAKS_DEFAULT);
+
+  function applyTweaks() {
+    document.body.setAttribute('data-accent', state.accent);
+    document.getElementById('hero-title').innerHTML = HEADLINES[state.headline];
+    document.querySelectorAll('.hero__ctas .btn--primary').forEach(btn => {
+      btn.firstChild.nodeValue = '';
+      btn.innerHTML = `${CTA_LABELS[state.cta]} <span class="arrow">→</span>`;
+      btn.setAttribute('href', CTA_HREFS[state.cta]);
+      if (state.cta === 'whatsapp') btn.setAttribute('target', '_blank'); else btn.removeAttribute('target');
+    });
+  }
+  applyTweaks();
+
+  function persistTweak(patch) {
+    Object.assign(state, patch);
+    applyTweaks();
+    try {
+      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: patch }, '*');
+    } catch (e) {}
+  }
+
+  // Wire tweak controls
+  document.querySelectorAll('[data-accent-pick]').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('[data-accent-pick]').forEach(x => x.classList.toggle('is-active', x === b));
+      persistTweak({ accent: b.getAttribute('data-accent-pick') });
+    });
+  });
+  document.querySelectorAll('[data-headline]').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('[data-headline]').forEach(x => x.classList.toggle('is-active', x === b));
+      persistTweak({ headline: b.getAttribute('data-headline') });
+    });
+  });
+  document.querySelectorAll('[data-cta]').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('[data-cta]').forEach(x => x.classList.toggle('is-active', x === b));
+      persistTweak({ cta: b.getAttribute('data-cta') });
+    });
+  });
+
+  // Tweaks panel show/hide protocol
+  const tweaksPanel = document.getElementById('tweaks');
+  window.addEventListener('message', (e) => {
+    if (!e.data || typeof e.data !== 'object') return;
+    if (e.data.type === '__activate_edit_mode') tweaksPanel.classList.add('is-visible');
+    if (e.data.type === '__deactivate_edit_mode') tweaksPanel.classList.remove('is-visible');
+  });
+  document.getElementById('tweaks-close').addEventListener('click', () => {
+    tweaksPanel.classList.remove('is-visible');
+    try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch(e){}
+  });
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
