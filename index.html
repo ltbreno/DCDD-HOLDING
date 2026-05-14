@@ -18,29 +18,29 @@
 
 <style>
   :root {
-    --bg: #0E0D0B;
-    --bg-elev: #161410;
-    --paper: #F4EFE6;          /* warm off-white — institutional */
-    --paper-elev: #ECE5D5;
-    --ink: #14110D;
-    --ink-soft: #4A4438;
-    --ink-mute: #837C6E;
-    --line-dark: rgba(244,239,230,0.10);
-    --line-dark-strong: rgba(244,239,230,0.20);
-    --line-light: rgba(20,17,13,0.10);
-    --line-light-strong: rgba(20,17,13,0.22);
-    --gold: #B8945A;            /* champagne gold — default accent */
-    --gold-deep: #8C6A3F;
-    --fg-on-dark: #F4EFE6;
-    --fg-on-dark-mute: #A8A296;
+    --bg: #0A0710;
+    --bg-elev: #14101E;
+    --paper: #F4F2F7;          /* cool off-white — matches DCDD light sections */
+    --paper-elev: #ECE8F0;
+    --ink: #14101E;
+    --ink-soft: #4A4458;
+    --ink-mute: #6E687F;
+    --line-dark: rgba(244,242,247,0.10);
+    --line-dark-strong: rgba(244,242,247,0.22);
+    --line-light: rgba(20,16,30,0.10);
+    --line-light-strong: rgba(20,16,30,0.22);
+    --gold: #C13AFF;            /* legacy var name, now lilac */
+    --gold-deep: #5014BA;
+    --fg-on-dark: #F4F2F7;
+    --fg-on-dark-mute: #A8A3B6;
 
     --pad: clamp(20px, 4.5vw, 88px);
     --gap: clamp(64px, 9vw, 130px);
   }
-  /* Accent variants — set on <body> */
-  body[data-accent="gold"]    { --accent: #B8945A; --accent-deep: #8C6A3F; --accent-soft: rgba(184,148,90,0.12); }
-  body[data-accent="emerald"] { --accent: #2F6B4F; --accent-deep: #1F4D38; --accent-soft: rgba(47,107,79,0.12); }
-  body[data-accent="oxblood"] { --accent: #8B2331; --accent-deep: #631923; --accent-soft: rgba(139,35,49,0.12); }
+  /* Accent variants — monochrome (preto + branco apenas) */
+  body[data-accent="gold"]    { --accent: #F4F2F7; --accent-deep: #FFFFFF; --accent-soft: rgba(244,242,247,0.10); }   /* Branco (default) */
+  body[data-accent="emerald"] { --accent: #A8A3B6; --accent-deep: #FFFFFF; --accent-soft: rgba(168,163,182,0.12); }   /* Cinza claro */
+  body[data-accent="oxblood"] { --accent: #14101E; --accent-deep: #000000; --accent-soft: rgba(20,16,30,0.08);   }   /* Preto */
 
   * { box-sizing: border-box; }
   html, body {
@@ -70,6 +70,10 @@
   .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; opacity: 0.55; }
   .eyebrow--gold { color: var(--accent); opacity: 1; }
   .eyebrow--gold::before { background: var(--accent); opacity: 0.9; }
+  .sec--paper .eyebrow--gold,
+  .form-section .eyebrow--gold { color: var(--ink); }
+  .sec--paper .eyebrow--gold::before,
+  .form-section .eyebrow--gold::before { background: var(--ink); }
 
   /* Type scale */
   .h-display {
@@ -94,6 +98,10 @@
   .sec--paper .lead { color: var(--ink-soft); }
 
   .accent-text { color: var(--accent); }
+  .sec--paper .accent-text,
+  .form-section .accent-text { color: var(--ink); }
+  .sec--paper .em-italic.accent-text,
+  .form-section .em-italic.accent-text { color: var(--ink); }
   .em-italic { font-style: italic; font-family: "Playfair Display", Georgia, serif; font-weight: 400; }
 
   /* Buttons */
@@ -107,8 +115,8 @@
   }
   .btn .arrow { transition: transform 220ms cubic-bezier(0.22,1,0.36,1); }
   .btn:hover .arrow { transform: translateX(4px); }
-  .btn--primary { background: var(--accent); color: #fff; }
-  .btn--primary:hover { background: var(--accent-deep); transform: translateY(-1px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
+  .btn--primary { background: var(--fg-on-dark); color: var(--bg); }
+  .btn--primary:hover { background: #FFFFFF; transform: translateY(-1px); box-shadow: 0 14px 30px rgba(0,0,0,0.45); }
   .btn--ghost-light { background: transparent; color: var(--fg-on-dark); border-color: var(--line-dark-strong); }
   .btn--ghost-light:hover { border-color: var(--fg-on-dark); }
   .btn--ink { background: var(--ink); color: var(--paper); }
@@ -125,7 +133,7 @@
     border-bottom: 1px solid transparent;
   }
   .nav--scrolled {
-    background: rgba(14,13,11,0.85);
+    background: rgba(10,7,16,0.85);
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     border-bottom-color: var(--line-dark);
     padding: 14px var(--pad);
@@ -133,7 +141,7 @@
   .brand { display: flex; align-items: center; gap: 12px; }
   .brand__mark {
     width: 36px; height: 36px; border-radius: 2px;
-    background: var(--accent); color: #fff;
+    background: var(--fg-on-dark); color: var(--bg);
     display: inline-flex; align-items: center; justify-content: center;
     font-family: "Playfair Display", serif; font-weight: 500; font-size: 18px;
     letter-spacing: 0;
@@ -161,7 +169,7 @@
   }
   .drawer {
     position: fixed; inset: 0; z-index: 70;
-    background: rgba(14,13,11,0.97); backdrop-filter: blur(18px);
+    background: rgba(10,7,16,0.97); backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     padding: 22px var(--pad) 32px;
     display: flex; flex-direction: column;
@@ -187,21 +195,21 @@
   .hero__atm { position: absolute; inset: 0; pointer-events: none; }
   .hero__halo {
     position: absolute; width: 900px; height: 900px; border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-soft), transparent 60%);
+    background: radial-gradient(circle, rgba(244,242,247,0.06), transparent 60%);
     filter: blur(80px);
     top: -300px; right: -250px;
   }
   .hero__halo-2 {
     position: absolute; width: 700px; height: 700px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(20,17,13,0.6), transparent 60%);
-    filter: blur(60px);
+    background: radial-gradient(circle, rgba(244,242,247,0.04), transparent 60%);
+    filter: blur(80px);
     bottom: -250px; left: -200px;
   }
   .hero__grid {
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(244,239,230,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(244,239,230,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(244,242,247,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,242,247,0.04) 1px, transparent 1px);
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
     -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
@@ -251,7 +259,7 @@
   .pain__cell:hover { background: var(--paper-elev); }
   .pain__cell .num {
     font-family: "Playfair Display", serif; font-weight: 400;
-    font-size: 28px; color: var(--accent); letter-spacing: -0.010em;
+    font-size: 28px; color: var(--ink); letter-spacing: -0.010em;
   }
   .pain__cell h4 { margin: 0; font-family: "Playfair Display", serif; font-weight: 500; font-size: 19px; letter-spacing: -0.012em; line-height: 1.25; color: var(--ink); }
   .pain__cell p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-soft); font-weight: 300; }
@@ -262,7 +270,7 @@
   .what__visual {
     border-radius: 8px; overflow: hidden;
     border: 1px solid var(--line-dark);
-    background: linear-gradient(180deg, #1A1814, #0E0D0B);
+    background: linear-gradient(180deg, #14101E, #0A0710);
     aspect-ratio: 4/5;
     position: relative; padding: 40px;
     display: flex; flex-direction: column; justify-content: space-between;
@@ -270,8 +278,8 @@
   .what__visual::before {
     content: ""; position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 70% 20%, var(--accent-soft), transparent 50%),
-      radial-gradient(ellipse at 20% 90%, rgba(255,255,255,0.03), transparent 50%);
+      radial-gradient(ellipse at 70% 20%, rgba(244,242,247,0.05), transparent 50%),
+      radial-gradient(ellipse at 20% 90%, rgba(244,242,247,0.03), transparent 50%);
   }
   .what__visual > * { position: relative; }
   .what__diagram {
@@ -281,7 +289,7 @@
   .what__node {
     padding: 14px 22px; border-radius: 4px;
     border: 1px solid var(--line-dark-strong);
-    background: rgba(244,239,230,0.04);
+    background: rgba(244,242,247,0.04);
     font-size: 13px; letter-spacing: 0.10em; text-transform: uppercase;
     font-weight: 500; min-width: 200px; text-align: center;
   }
@@ -297,7 +305,7 @@
   .what__leaf {
     padding: 12px 10px; border-radius: 4px;
     border: 1px solid var(--line-dark-strong);
-    background: rgba(244,239,230,0.02);
+    background: rgba(244,242,247,0.02);
     font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
     text-align: center; color: var(--fg-on-dark-mute);
   }
@@ -335,7 +343,7 @@
   }
   .ben__card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 40px rgba(20,17,13,0.07);
+    box-shadow: 0 18px 40px rgba(20,16,30,0.07);
     border-color: var(--accent);
   }
   .ben__icon {
@@ -386,7 +394,7 @@
   }
   .how__num {
     font-family: "Playfair Display", serif; font-weight: 400;
-    font-size: 56px; color: var(--accent); letter-spacing: -0.020em;
+    font-size: 56px; color: var(--ink); letter-spacing: -0.020em;
     line-height: 1; margin-bottom: 24px;
   }
   .how__step h4 { margin: 0 0 12px; font-family: "Playfair Display", serif; font-weight: 500; font-size: 21px; letter-spacing: -0.012em; line-height: 1.2; color: var(--ink); }
@@ -394,9 +402,7 @@
 
   /* ====================== URGENCY / REFORM ====================== */
   .urg {
-    background:
-      radial-gradient(ellipse at 80% 0%, var(--accent-soft), transparent 50%),
-      var(--bg);
+    background: var(--bg);
     border-top: 1px solid var(--line-dark);
     border-bottom: 1px solid var(--line-dark);
   }
@@ -412,7 +418,7 @@
   .urg__points {
     border: 1px solid var(--line-dark);
     border-radius: 6px;
-    background: rgba(244,239,230,0.02);
+    background: rgba(244,242,247,0.02);
     padding: 8px;
   }
   .urg__row {
@@ -451,7 +457,7 @@
   }
   .auth__bullets li:last-child { border-bottom: none; }
   .auth__bullets li::before {
-    content: ""; width: 12px; height: 1px; background: var(--accent);
+    content: ""; width: 12px; height: 1px; background: var(--ink);
     transform: translateY(-4px);
   }
   .auth__regions {
@@ -525,9 +531,7 @@
 
   /* ====================== CTA + FORM ====================== */
   .cta-final {
-    background:
-      radial-gradient(ellipse at 50% 0%, var(--accent-soft), transparent 50%),
-      var(--bg);
+    background: var(--bg);
     text-align: center;
   }
   .cta-final__title { max-width: 22ch; margin: 24px auto 0; }
@@ -550,7 +554,7 @@
     background: #FFFFFF;
     border: 1px solid var(--line-light);
     border-radius: 8px; padding: 48px;
-    box-shadow: 0 30px 60px rgba(20,17,13,0.10);
+    box-shadow: 0 30px 60px rgba(20,16,30,0.10);
   }
   @media (max-width: 700px) { .form-card { padding: 28px 22px; } }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -587,23 +591,17 @@
   .form-submit {
     display: inline-flex; align-items: center; gap: 12px;
     padding: 18px 32px; border-radius: 4px;
-    background: var(--accent); color: #fff;
+    background: var(--ink); color: #fff;
     border: none; font-size: 13px; letter-spacing: 0.10em;
     text-transform: uppercase; font-weight: 500; cursor: pointer;
     transition: background 200ms ease, transform 200ms ease;
     margin-top: 12px;
   }
-  .form-submit:hover { background: var(--accent-deep); transform: translateY(-1px); }
+  .form-submit:hover { background: #000; transform: translateY(-1px); }
   .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-  .form-success {
-    display: none;
-    padding: 56px 40px; text-align: center;
-    border: 1px solid var(--accent);
-    background: var(--accent-soft);
-    border-radius: 8px;
-  }
+  .form-success { display: none; padding: 56px 40px; text-align: center; border: 1px solid var(--ink); background: var(--paper-elev); border-radius: 8px; }
   .form-success.is-visible { display: block; }
-  .form-success svg { width: 56px; height: 56px; color: var(--accent-deep); margin-bottom: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+  .form-success svg { width: 56px; height: 56px; color: var(--ink); margin-bottom: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; }
   .form-success h3 { margin: 0 0 12px; font-family: "Playfair Display", serif; font-weight: 500; font-size: 28px; color: var(--ink); }
   .form-success p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
   .privacy-note { margin-top: 16px; font-size: 12px; color: var(--ink-mute); line-height: 1.5; }
@@ -621,7 +619,7 @@
   @media (max-width: 540px) { .footer__top { grid-template-columns: 1fr; gap: 32px; } }
   .footer__col h5 {
     margin: 0 0 18px; font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase;
-    font-weight: 500; color: var(--accent);
+    font-weight: 500; color: var(--fg-on-dark);
   }
   .footer__col p, .footer__col a {
     display: block; margin: 0 0 10px; font-size: 14px; line-height: 1.55;
@@ -632,7 +630,7 @@
   .footer__big {
     font-family: "Playfair Display", serif; font-weight: 400;
     font-size: clamp(36px, 4vw, 56px); line-height: 1; margin: 16px 0 0;
-    color: var(--accent); letter-spacing: -0.020em;
+    color: var(--fg-on-dark); letter-spacing: -0.020em;
   }
   .footer__bottom {
     margin-top: 56px; padding-top: 24px;
@@ -680,7 +678,7 @@
   .tweaks {
     position: fixed; right: 20px; top: 20px; z-index: 80;
     width: 280px; padding: 20px;
-    background: rgba(14,13,11,0.95); backdrop-filter: blur(16px);
+    background: rgba(10,7,16,0.95); backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--line-dark-strong); border-radius: 8px;
     color: var(--fg-on-dark);
@@ -1371,7 +1369,7 @@
       <div class="footer__col">
         <h5>Contato</h5>
         <p>Atendimento PB · PE · RJ · BA</p>
-        <a href="mailto:contato@holdings.adv.br">contato@holdings.adv.br</a>
+        <a href="/cdn-cgi/l/email-protection#b0d3dfdec4d1c4dff0d8dfdcd4d9ded7c39ed1d4c69ed2c2"><span class="__cf_email__" data-cfemail="bbd8d4d5cfdacfd4fbd3d4d7dfd2d5dcc895dadfcd95d9c9">[email&#160;protected]</span></a>
         <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp comercial</a>
         <a href="#contato">Agendar diagnóstico</a>
       </div>
@@ -1401,9 +1399,9 @@
   <div class="tweaks__group">
     <div class="tweaks__label">Cor de acento</div>
     <div class="tweaks__row">
-      <button class="tweaks__swatch is-active" data-accent-pick="gold" style="background:#B8945A;" aria-label="Dourado champagne"></button>
-      <button class="tweaks__swatch" data-accent-pick="emerald" style="background:#2F6B4F;" aria-label="Verde esmeralda"></button>
-      <button class="tweaks__swatch" data-accent-pick="oxblood" style="background:#8B2331;" aria-label="Bordô"></button>
+      <button class="tweaks__swatch is-active" data-accent-pick="gold" style="background:#F4F2F7;border:1px solid #888;" aria-label="Branco"></button>
+      <button class="tweaks__swatch" data-accent-pick="emerald" style="background:#A8A3B6;" aria-label="Cinza"></button>
+      <button class="tweaks__swatch" data-accent-pick="oxblood" style="background:#14101E;" aria-label="Preto"></button>
     </div>
   </div>
 
@@ -1426,7 +1424,7 @@
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /*EDITMODE-BEGIN*/
 const TWEAKS_DEFAULT = {
   "accent": "gold",
