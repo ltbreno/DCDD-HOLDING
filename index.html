@@ -138,7 +138,13 @@
     border-bottom-color: var(--line-dark);
     padding: 14px var(--pad);
   }
-  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px;
+    background: var(--paper);
+    border-radius: 2px;
+  }
+  .brand__logo { display: block; width: 116px; height: auto; }
   .brand__mark {
     width: 36px; height: 36px; border-radius: 2px;
     background: var(--fg-on-dark); color: var(--bg);
@@ -716,11 +722,7 @@
 <!-- ============================ NAV ============================ -->
 <nav class="nav" id="nav" data-screen-label="Nav">
   <a href="#top" class="brand">
-    <span class="brand__mark">H</span>
-    <span class="brand__text">
-      <b>Holdings &amp; Sucessão</b>
-      <small>Planejamento Patrimonial</small>
-    </span>
+    <img class="brand__logo" src="assets/dcdd-logo.png" alt="DCDD Advogados"/>
   </a>
   <div class="nav__links">
     <a class="nav__link" href="#por-que">Por que</a>
@@ -738,11 +740,7 @@
 <div class="drawer" id="drawer">
   <div class="drawer__top">
     <a href="#top" class="brand" data-drawer-close>
-      <span class="brand__mark">H</span>
-      <span class="brand__text">
-        <b>Holdings &amp; Sucessão</b>
-        <small>Planejamento Patrimonial</small>
-      </span>
+      <img class="brand__logo" src="assets/dcdd-logo.png" alt="DCDD Advogados"/>
     </a>
     <button class="nav__burger" id="drawer-close" aria-label="Fechar">
       <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -1339,11 +1337,7 @@
       <div class="footer__col">
         <div class="footer__brand">
           <div class="brand">
-            <span class="brand__mark">H</span>
-            <span class="brand__text">
-              <b>Holdings &amp; Sucessão</b>
-              <small>Planejamento Patrimonial</small>
-            </span>
+            <img class="brand__logo" src="assets/dcdd-logo.png" alt="DCDD Advogados"/>
           </div>
         </div>
         <p>Estruturamos holdings para proteger patrimônio, reduzir tributação e organizar sucessão familiar.</p>
